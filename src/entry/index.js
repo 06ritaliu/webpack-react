@@ -15,7 +15,7 @@ const renderDom = Component => {
 renderDom(App);
 
 if (module.hot) {
-  module.hot.accept('./App.js', () => {
+  module.hot.accept('./App', () => {
     console.log('Accepting the updated printMe module!');
     renderDom(App);
   })

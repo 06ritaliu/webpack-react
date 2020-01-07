@@ -15,7 +15,11 @@ var fontsPath                     = 'res/fonts/';
 module.exports = {
     target: "web",
     entry: {
-        app: ['react-hot-loader/patch', path.resolve(srcDir, './entry/index.js')]
+        app: [
+            'react-hot-loader/patch',
+            'webpack/hot/only-dev-server',
+            path.resolve(srcDir, './entry/index.js')
+        ]
     },
     output: {
         path: webDir,
@@ -45,8 +49,8 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
     ],
-    // watch: true,
-    devServer: {
+    // watch: true, //watch模式
+    devServer: { //dev-server模式
         contentBase: webDir,
         port: 3000,
         open: true,
